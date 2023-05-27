@@ -297,14 +297,16 @@ li:not(:last-child) {
 
 #-cardForm,
 #-bills,
-#-bankacctran {
+#-bankacctran,
+#-bankaccinfo {
   border-radius: 10px 0px 0px 0px;
   border-right: 1px solid rgb(140, 140, 140);
 }
 
 #-technicalForm,
 #-donations,
-#-cardtran {
+#-cardtran,
+#-cardsinfo {
   border-radius: 0px 10px 0px 0px;
 }
 
@@ -462,13 +464,22 @@ li:not(:last-child) {
 }
 
 .bills-wrapper,
-.transactions-wrapper {
+.transactions-wrapper,
+.bankaccinfo-wrapper,
+.cardsinfo-wrapper,
+.redeem-wrapper {
   position: absolute;
   display: flex;
   flex-direction: column;
   height: calc(100% - 50px);
   width: 100%;
   bottom: 0;
+}
+
+.redeem-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .transactions-wrapper {
@@ -479,12 +490,9 @@ li:not(:last-child) {
 
 .pending-bills {
   height: 200px;
-  /* background-color: #0be49c; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* position: absolute; */
   overflow-y: auto;
   white-space: nowrap;
 }
@@ -494,7 +502,8 @@ li:not(:last-child) {
   font-weight: 400;
 }
 .bill-info,
-.tran-info {
+.tran-info,
+.offer-info {
   display: flex;
   flex-direction: row;
   width: 70%;
@@ -511,14 +520,14 @@ li:not(:last-child) {
 }
 .pay-bill {
   flex-grow: 1;
-  /* background-color: chartreuse; */
   position: absolute;
   width: 100%;
   height: calc(100% - 200px);
   bottom: 0;
 }
 
-#tranname {
+#tranname,
+#offername {
   flex: 4;
   border-right: 1px solid rgb(140, 140, 140);
 }
@@ -532,11 +541,13 @@ li:not(:last-child) {
   border-right: 1px solid rgb(140, 140, 140);
 }
 #billamount,
-#tranTo {
+#tranTo,
+#offerpoints {
   flex: 2;
 }
 #billdue,
-#trandate {
+#trandate,
+#offerselect {
   border-left: 1px solid rgb(140, 140, 140);
   flex: 2;
 }
@@ -564,7 +575,10 @@ li:not(:last-child) {
 #tranname,
 #trandate,
 #tranTo,
-#tranFrom {
+#tranFrom,
+#offername,
+#offerpoints,
+#offerselect {
   margin: auto;
   text-align: center;
   font-weight: 400;
@@ -664,4 +678,62 @@ li:not(:last-child) {
   display: block;
   color: black;
   /* Additional styling as needed */
+}
+#offername::before {
+  padding-top: 5px;
+  content: "Offer Description";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#offerpoints::before {
+  padding-top: 5px;
+  content: "Needed Points";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+
+.cardsinfo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+
+#offerselect {
+  text-decoration: none;
+  color: black;
+  background-color: #0be49c;
+  margin: 0;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.creditcard {
+  border-radius: 10px;
+  background-color: #0be49c;
+  width: 200px;
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.creditcard h3 {
+  margin: 10px;
+}
+
+#-redeempoints {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(28, 28, 28);
+  border-radius: 999px;
+  padding: 5px;
+  margin: 10px;
 }

@@ -16,7 +16,10 @@ function apply(event) {
   const domestic = document.getElementById("domestic");
   const international = document.getElementById("international");
   const bills = document.getElementById("bills");
+  const bankaccinfo = document.getElementById("bankaccinfo");
+  const cardsinfo = document.getElementById("cardsinfo");
   const bankacctran = document.getElementById("bankacctran");
+  const redeempoints = document.getElementById("redeempoints");
   const cardtran = document.getElementById("cardtran");
   const donations = document.getElementById("donations");
   const cardrprt = document.getElementById("cardForm");
@@ -45,6 +48,9 @@ function apply(event) {
     international,
     bankacctran,
     cardtran,
+    bankaccinfo,
+    cardsinfo,
+    redeempoints,
   ];
   const arr2 = [
     "-notf",
@@ -60,7 +66,11 @@ function apply(event) {
     "-international",
     "-bankacctran",
     "-cardtran",
+    "-bankaccinfo",
+    "-cardsinfo",
+    "-redeempoints",
   ];
+  //&& event.target.id != "-redeempoints"
   event.preventDefault();
   console.log(event.target.id);
   const prop = document.getElementById((event.target.id + "").substring(1))
@@ -71,7 +81,9 @@ function apply(event) {
       event.target.id != "-cardForm" &&
       event.target.id != "-technicalForm" &&
       event.target.id != "-bankacctran" &&
-      event.target.id != "-cardtran"
+      event.target.id != "-cardtran" &&
+      event.target.id != "-cardsinfo" &&
+      event.target.id != "-redeempoints"
     )
       document.getElementById(
         (event.target.id + "").substring(1)
@@ -100,6 +112,12 @@ function apply(event) {
         c2.style.display = "block";
       if (event.target.id == "-bankacctran" || event.target.id == "-cardtran")
         transc.style.display = "block";
+      if (
+        event.target.id == "-bankaccinfo" ||
+        event.target.id == "-cardsinfo" ||
+        event.target.id == "-redeempoints"
+      )
+        c1.style.display = "block";
     });
     if (!arr2.includes(event.target.id))
       title.textContent = document.getElementById(event.target.id).textContent;
