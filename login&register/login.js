@@ -24,14 +24,29 @@ function validateForm() {
     return false;
   }
 
-  if (username === "a" && pass === "b") {
+  if (username === "client" && pass === "client") {
     const alert = document.getElementById("a1");
     alert.style.visibility = "visible";
     setTimeout(() => {
       window.location.replace("../client/homePage.html");
     }, 3000);
     return false;
-  } else {
+  } else if (username === "admin" && pass === "admin") {
+    const alert = document.getElementById("a1");
+    alert.style.visibility = "visible";
+    setTimeout(() => {
+      window.location.replace("../admin/homePage.html");
+    }, 3000);
+    return false;
+
+  } else if (username === "banker" && pass === "banker") {
+    const alert = document.getElementById("a1");
+    alert.style.visibility = "visible";
+    setTimeout(() => {
+      window.location.replace("../banker/homePage.html");
+    }, 3000);
+    return false; 
+  }else {
     showAlert("incorrect username or password");
     return false;
   }
