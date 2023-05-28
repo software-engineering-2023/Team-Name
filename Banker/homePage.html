@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="homePage.css" />
-    <script src="../admin/homePage.js"></script>
+    <script src="../banker/homePage.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,25 +28,27 @@
         <div class="home-menu-options">
           <ul>
             <li>
-              <span class="material-symbols-outlined"> manage_accounts </span
-              ><a id="-c1" onclick="apply(event)" href="">Manage Clients</a>
-            </li>
-            <li>
-              <span class="material-symbols-outlined"> badge </span
-              ><a id="-managebanker" href="" onclick="apply(event)"
-                >Manage Bankers</a
+              <span class="material-symbols-outlined"> real_estate_agent </span
+              ><a id="-managecardapps" onclick="apply(event)" href=""
+                >Manage Card Applications</a
               >
             </li>
             <li>
-              <span class="material-symbols-outlined"> problem </span
+              <span class="material-symbols-outlined"> credit_card </span
+              ><a id="-manageloans" href="" onclick="apply(event)"
+                >Manage Loan Applications</a
+              >
+            </li>
+            <li>
+              <span class="material-symbols-outlined"> account_balance </span
               ><a id="-managereports" onclick="apply(event)" href=""
-                >Manage Reports</a
+                >Manage Card Reports</a
               >
             </li>
             <li>
               <span class="material-symbols-outlined"> campaign </span
-              ><a id="-createAnnouncement" onclick="apply(event)" href=""
-                >Create an Announcement
+              ><a id="-managebankaccounts" onclick="apply(event)" href=""
+                >Manage Bank Accounts
               </a>
             </li>
           </ul>
@@ -66,7 +68,7 @@
       </div>
       <div class="home-dashboard">
         <div class="home-dashboard-header">
-          <h2 id="pageTitle">Accounts and Cards</h2>
+          <h2 id="pageTitle">Manage Loan Applications</h2>
           <h3 id="headerName">Banker</h3>
           <a href="" class="icon">
             <span
@@ -79,7 +81,61 @@
           </a>
         </div>
         <div class="content" id="contentt">
-          <div class="c1" id="c1"></div>
+          <div class="managecardapps" id="managecardapps">
+            <div class="transactions-wrapper" id="cardapps">
+              <h3 id="login-field" class="pnd notfheader">
+                Pending Bank Account Applications
+              </h3>
+              <div class="notifications-all">
+                <div class="notifications-info">
+                  <div class="notifications-info-header">
+                    <h3 id="notfsender">hazemmohamed210</h3>
+                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfstatus">employed</h3>
+                    <h3 id="notfemployer">GUC</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfcardsowned">0</h3>
+                    <h3 id="notfoccupation">web developer</h3>
+                    <h3 id="notfincome">1000000000000</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <div class="btn-wrapper">
+                      <a id="acceptbtn" href="">accept</a>
+                    </div>
+                    <div class="btn-wrapper">
+                      <a id="rejectbtn" href="">reject</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="notifications-info">
+                  <div class="notifications-info-header">
+                    <h3 id="notfsender">hazemmohamed210</h3>
+                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfstatus">employed</h3>
+                    <h3 id="notfemployer">GUC</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfcardsowned">0</h3>
+                    <h3 id="notfoccupation">web developer</h3>
+                    <h3 id="notfincome">1000000000000</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <div class="btn-wrapper">
+                      <a id="acceptbtn" href="">accept</a>
+                    </div>
+                    <div class="btn-wrapper">
+                      <a id="rejectbtn" href="">reject</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="managereports" id="managereports">
             <div class="reporting-cntnt">
               <div class="report-options">
@@ -284,198 +340,224 @@
               </div>
             </div>
           </div>
-          <div class="announcements" id="createAnnouncement">
-            <div class="login-form-wrapper">
-              <form
-                action=""
-                name="myForm"
-                onsubmit="return validateForm()"
-                class="login-form"
-              >
-                <label for="" id="login-label">Create an Announcement</label>
-                <input
-                  type="text"
-                  id="login-field"
-                  name="cardNum"
-                  placeholder="Announcement Title"
-                />
-                <textarea
-                  rows="5"
-                  cols="30"
-                  placeholder="Enter The Announcement Text"
-                  id="login-field"
-                ></textarea>
-                <input type="submit" id="submit-btn" value="POST" />
-              </form>
-            </div>
-          </div>
-          <div class="manageBankers" id="managebanker">
+          <div class="announcements" id="managebankaccounts">
             <div class="reporting-cntnt">
               <div class="report-options">
-                <a href="" id="-addbanker" onclick="apply(event)">Add Banker</a>
-                <a href="" id="-removebanker" onclick="apply(event)"
-                  >Remove Banker</a
+                <a href="" id="-openaccount" onclick="apply(event)"
+                  >Open Account Applications</a
+                >
+                <a href="" id="-closeaccount" onclick="apply(event)"
+                  >Close Account Requests</a
                 >
               </div>
               <div class="report-form">
-                <div class="login-form-wrapper" id="addbanker">
-                  <form
-                    action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
-                    class="login-form"
-                  >
-                    <label for="" id="login-label"
-                      >Add a new Banker Account</label
-                    >
-                    <input
-                      type="text"
-                      id="login-field"
-                      name="fname"
-                      placeholder="Banker's Employee Id"
-                    />
-                    <select id="login-field" class="roleSelect">
-                      <option value="">Select a role</option>
-                      <option value="option1" class="dropval">
-                        Managing loan applications
-                      </option>
-                      <option value="option2" class="dropval">
-                        Managing credit card reports
-                      </option>
-                      <option value="option3" class="dropval">
-                        Managing bank accounts opening/closing
-                      </option>
-                      <option value="option4" class="dropval">
-                        Managing credit card applications
-                      </option>
-                      <!-- <option value="option5" class="dropval">
-                        Cus
-                      </option> -->
-                    </select>
-                    <input type="submit" id="submit-btn" value="ADD" />
-                  </form>
-                </div>
-                <div class="login-form-wrapper" id="removebanker">
-                  <form
-                    action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
-                    class="login-form"
-                  >
-                    <label for="" id="login-label"
-                      >Remove a banker from the system</label
-                    >
-                    <input
-                      type="text"
-                      id="login-field"
-                      name="oldpass"
-                      placeholder="Banker's Employee ID"
-                    />
-                    <input
-                      type="password"
-                      id="login-field"
-                      name="newpass"
-                      placeholder="Reason for removal"
-                    />
-                    <input
-                      type="submit"
-                      id="submit-btn"
-                      value="SAVE SETTINGS"
-                    />
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="reporting" id="reporting">
-            <div class="reporting-cntnt">
-              <div class="report-options">
-                <a href="" id="-cardForm" onclick="apply(event)">Card Issue</a>
-                <a href="" id="-technicalForm" onclick="apply(event)"
-                  >Technical Issue</a
-                >
-              </div>
-              <div class="report-form">
-                <div class="card-report">
-                  <div class="login-form-wrapper" id="cardForm">
-                    <form
-                      action=""
-                      name="myForm"
-                      onsubmit="return validateForm()"
-                      class="login-form"
-                    >
-                      <label for="" id="login-label">Card Issue Report</label>
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="cardNum"
-                        placeholder="Please enter the card number"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="issue"
-                        placeholder="Specify the card issue (stolen/lost/damaged)"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="start"
-                        placeholder="If the card was lost/stolen, when did this happen?"
-                      />
-                      <div class="chk-wrapper">
-                        <label for="chk">replace card?</label>
-                        <input
-                          type="checkbox"
-                          id="login-field chk"
-                          placeholder="replace card?"
-                        />
+                <div class="transactions-wrapper" id="openaccount">
+                  <h3 id="login-field" class="pnd notfheader">
+                    Pending Bank Account Applications
+                  </h3>
+                  <div class="notifications-all">
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
                       </div>
-                      <input type="submit" id="submit-btn" value="SUBMIT" />
-                    </form>
-                  </div>
-                  <div class="login-form-wrapper" id="technicalForm">
-                    <form
-                      action=""
-                      name="myForm"
-                      onsubmit="return validateForm()"
-                      class="login-form"
-                    >
-                      <label for="" id="login-label"
-                        >Technical Issue Report</label
-                      >
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="subject"
-                        placeholder="Subject"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="start"
-                        placeholder="When did you start to notice this issue?"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="frequency"
-                        placeholder="How frequent (per day) do you face this problem?"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="comments"
-                        placeholder="Please feel free to add any notes or comments"
-                      />
-                      <input type="submit" id="submit-btn" value="SUBMIT" />
-                    </form>
+                      <div class="notifications-info-header">
+                        <h3 id="notfstatus">employed</h3>
+                        <h3 id="notfemployer">GUC</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfacctype">Savings Account</h3>
+                        <h3 id="notffunds">salary</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfoccupation">web developer</h3>
+                        <h3 id="notfincome">1000000000000</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <div class="btn-wrapper">
+                          <a id="acceptbtn" href="">accept</a>
+                        </div>
+                        <div class="btn-wrapper">
+                          <a id="rejectbtn" href="">reject</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="technical-report"></div>
+                <div class="transactions-wrapper" id="closeaccount">
+                  <h3 id="login-field" class="pnd notfheader">
+                    pending bank account closing requests
+                  </h3>
+                  <div class="notifications-all">
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notfuser">zeyadtarek17</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfaccnumbr">111 000 111 000</h3>
+                        <h3 id="notfreason">I don't like this bank</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <div class="btn-wrapper">
+                          <a id="acceptbtn" href="">accept</a>
+                        </div>
+                        <div class="btn-wrapper">
+                          <a id="rejectbtn" href="">reject</a>
+                        </div>
+                      </div>
+                      <!-- <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div> -->
+                    </div>
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notfuser">zeyadtarek17</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfaccnumbr">111 000 111 000</h3>
+                        <h3 id="notfreason">I don't like this bank</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <div class="btn-wrapper">
+                          <a id="acceptbtn" href="">accept</a>
+                        </div>
+                        <div class="btn-wrapper">
+                          <a id="rejectbtn" href="">reject</a>
+                        </div>
+                      </div>
+                      <!-- <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div> -->
+                    </div>
+                    <!-- <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notftitle">Card Stolen</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notfissue">Card Stolen</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notfissue">Card Stolen</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
               </div>
             </div>
-          </div> -->
+          </div>
+          <div class="manageLoans" id="manageloans">
+            <div class="transactions-wrapper" id="loanapps">
+              <h3 id="login-field" class="pnd notfheader">
+                Pending Loan Applications
+              </h3>
+              <div class="notifications-all">
+                <div class="notifications-info">
+                  <div class="notifications-info-header">
+                    <h3 id="notfsender">hazemmohamed210</h3>
+                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfstatus">employed</h3>
+                    <h3 id="notfemployer">GUC</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfcardsowned">0</h3>
+                    <h3 id="notfoccupation">web developer</h3>
+                    <h3 id="notfincome">1000000000000</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <div class="btn-wrapper">
+                      <a id="acceptbtn" href="">accept</a>
+                    </div>
+                    <div class="btn-wrapper">
+                      <a id="rejectbtn" href="">reject</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="notifications-info">
+                  <div class="notifications-info-header">
+                    <h3 id="notfsender">hazemmohamed210</h3>
+                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfstatus">employed</h3>
+                    <h3 id="notfemployer">GUC</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <h3 id="notfcardsowned">0</h3>
+                    <h3 id="notfoccupation">web developer</h3>
+                    <h3 id="notfincome">1000000000000</h3>
+                  </div>
+                  <div class="notifications-info-header">
+                    <div class="btn-wrapper">
+                      <a id="acceptbtn" href="">accept</a>
+                    </div>
+                    <div class="btn-wrapper">
+                      <a id="rejectbtn" href="">reject</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="notifications" id="notf">
             <div class="transactions-wrapper" id="specificnotf">
               <h3 id="login-field" class="pnd notfheader">Notifications</h3>

@@ -1,30 +1,30 @@
 function apply(event) {
-  const c1 = document.getElementById("c1");
   const managereports = document.getElementById("managereports");
   const sett = document.getElementById("settings");
-  const managebanker = document.getElementById("managebanker");
-  const addbanker = document.getElementById("addbanker");
-  const removebanker = document.getElementById("removebanker");
+  const manageloans = document.getElementById("manageloans");
+  const managecardapps = document.getElementById("managecardapps");
   const personalInfo = document.getElementById("personalInfo");
   const passSettings = document.getElementById("passSettings");
   const pendingreports = document.getElementById("pendingreports");
   const issueresolution = document.getElementById("issueresolution");
-  const createAnnouncement = document.getElementById("createAnnouncement");
+  const openaccount = document.getElementById("openaccount");
+  const closeaccount = document.getElementById("closeaccount");
+  const managebankaccounts = document.getElementById("managebankaccounts");
   const notf = document.getElementById("notf");
   const title = document.getElementById("pageTitle");
   const arr = [
-    c1,
+    managecardapps,
     managereports,
     sett,
-    managebanker,
+    manageloans,
     notf,
     passSettings,
     personalInfo,
-    createAnnouncement,
-    addbanker,
-    removebanker,
+    managebankaccounts,
     pendingreports,
     issueresolution,
+    openaccount,
+    closeaccount,
   ];
   const arr2 = [
     "-notf",
@@ -56,17 +56,19 @@ function apply(event) {
         event.target.id == "-passSettings"
       )
         sett.style.display = "block";
-      if (event.target.id == "-addbanker" || event.target.id == "-removebanker")
-        managebanker.style.display = "block";
       if (
         event.target.id == "-issueresolution" ||
         event.target.id == "-pendingreports"
       )
         managereports.style.display = "block";
+      if (
+        event.target.id == "-openaccount" ||
+        event.target.id == "-closeaccount"
+      )
+        managebankaccounts.style.display = "block";
     });
     if (!arr2.includes(event.target.id))
       title.textContent = document.getElementById(event.target.id).textContent;
     else if (event.target.id == "-notf") title.textContent = "Notifications";
-    console.log("fuck");
   }
 }

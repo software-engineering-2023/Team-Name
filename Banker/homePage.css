@@ -191,7 +191,7 @@ li:not(:last-child) {
   /* background-color: brown; */
   flex-grow: 1;
 }
-.c1 {
+.managecardapps {
   position: absolute;
   background-color: white;
   width: 100%;
@@ -233,7 +233,7 @@ li:not(:last-child) {
   text-align: center;
 }
 
-.manageBankers {
+.manageLoans {
   position: absolute;
   /* background-color: #6190e8; */
   width: 100%;
@@ -446,7 +446,9 @@ li:not(:last-child) {
 }
 
 #-passSettings,
-#-removebanker {
+#-removebanker,
+#-closeaccount,
+#-issueresolution {
   border-left: 1px solid rgb(140, 140, 140);
 }
 
@@ -454,7 +456,8 @@ li:not(:last-child) {
 #-international,
 #-passSettings,
 #-removebanker,
-#-issueresolution {
+#-issueresolution,
+#-closeaccount {
   border-radius: 0px 10px 0px 0px;
   /* border-left: 1px solid rgb(140, 140, 140); */
 }
@@ -467,7 +470,8 @@ li:not(:last-child) {
 #-personalInfo,
 #-internal,
 #-addbanker,
-#-pendingreports {
+#-pendingreports,
+#-openaccount {
   border-radius: 10px 0px 0px 0px;
 }
 
@@ -837,6 +841,86 @@ li:not(:last-child) {
   color: black;
   /* Additional styling as needed */
 }
+#notfaccnumbr::before {
+  padding-top: 5px;
+  content: "Account Number to be closed";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfuser::before {
+  padding-top: 5px;
+  content: "Client's Username";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfreason::before {
+  padding-top: 5px;
+  content: "closing reason";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfincome::before {
+  padding-top: 5px;
+  content: "Annual Income";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfoccupation::before {
+  padding-top: 5px;
+  content: "Occupation";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfacctype::before {
+  padding-top: 5px;
+  content: "Account Type";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfemployer::before {
+  padding-top: 5px;
+  content: "Employer Name";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notffunds::before {
+  padding-top: 5px;
+  content: "Source of Funds";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfstatus::before {
+  padding-top: 5px;
+  content: "Employment Status";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfcardsowned::before {
+  padding-top: 5px;
+  content: "Credit Cards Owned";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
 
 .cardsinfo-wrapper {
   display: flex;
@@ -931,9 +1015,22 @@ li:not(:last-child) {
   justify-content: center;
 }
 
-#deletereport {
+#deletereport,
+#rejectbtn {
   text-align: center;
   background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px;
+  width: fit-content;
+  border: 1px solid white;
+  transition: 0.6s;
+}
+
+#acceptbtn {
+  text-align: center;
+  background-color: #0cf0a4;
   color: white;
   text-decoration: none;
   border-radius: 999px;
@@ -947,6 +1044,16 @@ li:not(:last-child) {
   color: red;
   background-color: white;
   border: 1px solid red;
+}
+#rejectbtn:hover {
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+}
+#acceptbtn:hover {
+  color: #0cf0a4;
+  background-color: white;
+  border: 1px solid #0cf0a4;
 }
 
 .notifications-info h3 {
