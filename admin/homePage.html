@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="homePage.css" />
-    <script src="homePage.js"></script>
+    <script src="../admin/homePage.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,42 +33,21 @@
             </li>
             <li>
               <span class="material-symbols-outlined"> badge </span
-              ><a id="-transc" href="" onclick="apply(event)">Manage Bankers</a>
+              ><a id="-managebanker" href="" onclick="apply(event)"
+                >Manage Bankers</a
+              >
             </li>
             <li>
               <span class="material-symbols-outlined"> problem </span
-              ><a id="-c2" onclick="apply(event)" href="">Manage Reports</a>
+              ><a id="-managereports" onclick="apply(event)" href=""
+                >Manage Reports</a
+              >
             </li>
             <li>
               <span class="material-symbols-outlined"> campaign </span
-              ><a id="-pay" onclick="apply(event)" href=""
+              ><a id="-createAnnouncement" onclick="apply(event)" href=""
                 >Create an Announcement
               </a>
-              <!-- </li>
-            <li>
-              <span class="material-symbols-outlined"> real_estate_agent </span
-              ><a href="" id="-loanApp" onclick="apply(event)"
-                >Apply for loan</a
-              >
-            </li>
-            <li>
-              <span class="material-symbols-outlined"> credit_card </span
-              ><a href="" id="-cardApp" onclick="apply(event)"
-                >Apply for credit card</a
-              >
-            </li>
-            <li>
-              <span class="material-symbols-outlined"> person_add </span
-              ><a href="" id="-openAcc" onclick="apply(event)"
-                >Open bank account</a
-              >
-            </li>
-            <li>
-              <span class="material-symbols-outlined"> report </span
-              ><a id="-reporting" href="" onclick="apply(event)"
-                >Report a problem</a
-              >
-            </li> -->
             </li>
           </ul>
         </div>
@@ -88,7 +67,7 @@
       <div class="home-dashboard">
         <div class="home-dashboard-header">
           <h2 id="pageTitle">Accounts and Cards</h2>
-          <h3>Admin</h3>
+          <h3 id="headerName">Admin</h3>
           <a href="" class="icon">
             <span
               class="material-symbols-outlined"
@@ -100,11 +79,118 @@
           </a>
         </div>
         <div class="content" id="contentt">
-          <div class="c1" id="c1">
-         
-          </div>
-          <div class="c2" id="c2">
-         
+          <div class="c1" id="c1"></div>
+          <div class="managereports" id="managereports">
+            <div class="reporting-cntnt">
+              <div class="report-options">
+                <a href="" id="-pendingreports" onclick="apply(event)"
+                  >Pending Reports</a
+                >
+                <a href="" id="-issueresolution" onclick="apply(event)"
+                  >Send Issue Resolution Message</a
+                >
+              </div>
+              <div class="report-form">
+                <div class="transactions-wrapper" id="pendingreports">
+                  <h3 id="login-field" class="pnd notfheader">
+                    Pending Reports
+                  </h3>
+                  <div class="notifications-all">
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notftitle">can't update personal info</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notftitle">can't update personal info</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notftitle">can't update personal info</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="notifications-info">
+                      <div class="notifications-info-header">
+                        <h3 id="notftitle">can't update personal info</h3>
+                        <h3 id="notftime">29-05-2023 19:00 pm</h3>
+                      </div>
+                      <div class="notifications-info-header">
+                        <h3 id="notfsender">hazemmohamed210</h3>
+                        <div class="btn-wrapper">
+                          <a id="deletereport" href="">Delete Report</a>
+                        </div>
+                      </div>
+                      <div class="notifications-info-rest">
+                        <h3 id="notfcontent">
+                          the updated settings for my personal info isn't saved.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="login-form-wrapper" id="issueresolution">
+                  <form
+                    action=""
+                    name="myForm"
+                    onsubmit="return validateForm()"
+                    class="login-form"
+                  >
+                    <label for="" id="login-label">Send a reply </label>
+                    <input
+                      type="text"
+                      id="login-field"
+                      name="cardNum"
+                      placeholder="Client's username"
+                    />
+                    <textarea
+                      rows="5"
+                      cols="30"
+                      placeholder="Enter the reply"
+                      id="login-field"
+                    ></textarea>
+                    <input type="submit" id="submit-btn" value="POST" />
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="settings" id="settings">
             <div class="reporting-cntnt">
@@ -114,9 +200,6 @@
                 >
                 <a href="" id="-passSettings" onclick="apply(event)"
                   >Password and Security</a
-                >
-                <a href="" id="-notfSettings" onclick="apply(event)"
-                  >Reminders</a
                 >
               </div>
               <div class="report-form">
@@ -198,148 +281,10 @@
                     />
                   </form>
                 </div>
-                <div class="login-form-wrapper" id="notfSettings">
-                  <form
-                    action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
-                    class="login-form"
-                  >
-                    <label for="" id="login-label"
-                      >Set Reminder for Bills/Payments</label
-                    >
-                    <select id="login-field" class="dropdown">
-                      <option value="">Select a Bill</option>
-                      <option value="option1" class="dropval">Gas Bill</option>
-                      <option value="option2" class="dropval">
-                        Water Bill
-                      </option>
-                      <option value="option3" class="dropval">
-                        Telephone Bill
-                      </option>
-                      <option value="option3" class="dropval">
-                        Electricity Bill
-                      </option>
-                      <option value="option3" class="dropval">
-                        Custom Bill
-                      </option>
-                    </select>
-                    <input
-                      type="text"
-                      id="login-field"
-                      name="custom"
-                      placeholder="for custom bills, please enter the bill id"
-                    />
-                    <input
-                      type="datetime-local"
-                      id="login-field"
-                      name="when"
-                      placeholder="choose the date and time for the reminder"
-                    />
-                    <input
-                      type="text"
-                      id="login-field"
-                      name="msg"
-                      placeholder="add a custom message for the reminder (optional)"
-                    />
-                    <input
-                      type="submit"
-                      id="submit-btn"
-                      value="SAVE SETTINGS"
-                    />
-                  </form>
-                </div>
               </div>
             </div>
           </div>
-          <div class="payments" id="pay">
-            <!-- <div class="reporting-cntnt">
-              <div class="report-options">
-                <a href="" id="-bills" onclick="apply(event)">Bills</a>
-                <a href="" id="-donations" onclick="apply(event)">Donations</a>
-              </div>
-              <div class="bills-wrapper" id="bills">
-                <h3 id="login-field" class="pnd">Pending bills</h3>
-                <div class="pending-bills">
-                  <div class="bill-info" id="gas">
-                    <h4 id="billname">Gas Bill</h4>
-                    <h4 id="billamount">800 EGP</h4>
-                    <h4 id="billdue">26-05-2023</h4>
-                    <h4 id="reminderon">reminder set</h4>
-                  </div>
-                  <div class="bill-info" id="water">
-                    <h4 id="billname">Water Bill</h4>
-                    <h4 id="billamount">950 EGP</h4>
-                    <h4 id="billdue">27-05-2023</h4>
-                    <h4 id="reminderoff">no reminder</h4>
-                  </div>
-                  <div class="bill-info" id="electricity">
-                    <h4 id="billname">Electricity Bill</h4>
-                    <h4 id="billamount">9000 EGP</h4>
-                    <h4 id="billdue">28-05-2023</h4>
-                    <h4 id="reminderon">reminder set</h4>
-                  </div>
-                  <div class="bill-info" id="phone">
-                    <h4 id="billname">Phone Bill</h4>
-                    <h4 id="billamount">90000 EGP</h4>
-                    <h4 id="billdue">29-05-2023</h4>
-                    <h4 id="reminderon">reminder set</h4>
-                  </div>
-                </div>
-                <div class="pay-bill">
-                  <div class="login-form-wrapper">
-                    <form action="" name="billForm" class="login-form">
-                      <label for="" id="login-label">Pay Bill</label>
-                      <select id="login-field" class="billSelect">
-                        <option value="">Select a Bill</option>
-                        <option value="option1" id="gasbll" class="dropval">
-                          Gas Bill
-                        </option>
-                        <option value="option2" id="wtrbll" class="dropval">
-                          Water Bill
-                        </option>
-                        <option value="option3" id="telbll" class="dropval">
-                          Telephone Bill
-                        </option>
-                        <option value="option4" id="elcbll" class="dropval">
-                          Electricity Bill
-                        </option>
-                        <option value="option5" class="dropval">
-                          Custom Bill
-                        </option>
-                      </select>
-                      <input
-                        type="submit"
-                        id="submit-btn"
-                        onclick="payBill(event)"
-                        value="PAY"
-                      />
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <div class="login-form-wrapper" id="donations">
-                <form
-                  action=""
-                  name="myForm"
-                  onsubmit="return validateForm()"
-                  class="login-form"
-                >
-                  <label for="" id="login-label">Donate</label>
-                  <select id="login-field" class="dropdown">
-                    <option value="">Select a charity</option>
-                    <option value="option1" class="dropval">57357</option>
-                    <option value="option2" class="dropval">El orman</option>
-                  </select>
-                  <input
-                    type="number"
-                    id="login-field"
-                    placeholder="enter the amount to be donated"
-                  />
-                  <input type="submit" id="submit-btn" value="SUBMIT" />
-                </form>
-              </div>
-            </div> -->
+          <div class="announcements" id="createAnnouncement">
             <div class="login-form-wrapper">
               <form
                 action=""
@@ -354,34 +299,95 @@
                   name="cardNum"
                   placeholder="Announcement Title"
                 />
-                <input
-                  type="text"
-                  id="login-field2"
-                  name="issue"
-                  placeholder="Body"
-                />
-                <!-- <input
-                  type="text"
+                <textarea
+                  rows="5"
+                  cols="30"
+                  placeholder="Enter The Announcement Text"
                   id="login-field"
-                  name="start"
-                  placeholder="If the card was lost/stolen, when did this happen?"
-                />
-                <div class="chk-wrapper">
-                  <label for="chk">replace card?</label>
-                  <input
-                    type="checkbox"
-                    id="login-field chk"
-                    placeholder="replace card?"
-                  />
-                </div> -->
-                <input type="submit" id="submit-btn" value="SUBMIT" />
+                ></textarea>
+                <input type="submit" id="submit-btn" value="POST" />
               </form>
             </div>
           </div>
-          <div class="transactions" id="transc">
-           
+          <div class="manageBankers" id="managebanker">
+            <div class="reporting-cntnt">
+              <div class="report-options">
+                <a href="" id="-addbanker" onclick="apply(event)">Add Banker</a>
+                <a href="" id="-removebanker" onclick="apply(event)"
+                  >Remove Banker</a
+                >
+              </div>
+              <div class="report-form">
+                <div class="login-form-wrapper" id="addbanker">
+                  <form
+                    action=""
+                    name="myForm"
+                    onsubmit="return validateForm()"
+                    class="login-form"
+                  >
+                    <label for="" id="login-label"
+                      >Add a new Banker Account</label
+                    >
+                    <input
+                      type="text"
+                      id="login-field"
+                      name="fname"
+                      placeholder="Banker's Employee Id"
+                    />
+                    <select id="login-field" class="roleSelect">
+                      <option value="">Select a role</option>
+                      <option value="option1" class="dropval">
+                        Managing loan applications
+                      </option>
+                      <option value="option2" class="dropval">
+                        Managing credit card reports
+                      </option>
+                      <option value="option3" class="dropval">
+                        Managing bank accounts opening/closing
+                      </option>
+                      <option value="option4" class="dropval">
+                        Managing credit card applications
+                      </option>
+                      <!-- <option value="option5" class="dropval">
+                        Cus
+                      </option> -->
+                    </select>
+                    <input type="submit" id="submit-btn" value="ADD" />
+                  </form>
+                </div>
+                <div class="login-form-wrapper" id="removebanker">
+                  <form
+                    action=""
+                    name="myForm"
+                    onsubmit="return validateForm()"
+                    class="login-form"
+                  >
+                    <label for="" id="login-label"
+                      >Remove a banker from the system</label
+                    >
+                    <input
+                      type="text"
+                      id="login-field"
+                      name="oldpass"
+                      placeholder="Banker's Employee ID"
+                    />
+                    <input
+                      type="password"
+                      id="login-field"
+                      name="newpass"
+                      placeholder="Reason for removal"
+                    />
+                    <input
+                      type="submit"
+                      id="submit-btn"
+                      value="SAVE SETTINGS"
+                    />
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="reporting" id="reporting">
+          <!-- <div class="reporting" id="reporting">
             <div class="reporting-cntnt">
               <div class="report-options">
                 <a href="" id="-cardForm" onclick="apply(event)">Card Issue</a>
@@ -469,140 +475,7 @@
                 <div class="technical-report"></div>
               </div>
             </div>
-          </div>
-          <div class="loanApp" id="loanApp">
-            <div class="login-form-wrapper" id="loanForm">
-              <form
-                action=""
-                name="myForm"
-                onsubmit="return validateForm()"
-                class="login-form"
-              >
-                <label for="" id="login-label">Loan Application</label>
-                <input
-                  type="text"
-                  id="login-field"
-                  name="subject"
-                  placeholder="Occupation"
-                />
-                <input
-                  type="number"
-                  id="login-field"
-                  name="start"
-                  placeholder="Loan Amount"
-                />
-                <input
-                  type="number"
-                  id="login-field"
-                  name="start"
-                  placeholder="Annual Income"
-                />
-                <select id="login-field" class="dropdown">
-                  <option value="">Select Loan Type</option>
-                  <option value="option1" class="dropval">Personal Loan</option>
-                  <option value="option1" class="dropval">Car Loan</option>
-                </select>
-                <input type="submit" id="submit-btn" value="SUBMIT" />
-              </form>
-            </div>
-          </div>
-          <div class="openAcc" id="openAcc">
-            <div class="login-form-wrapper" id="loanForm">
-              <form
-                action=""
-                name="myForm"
-                onsubmit="return validateForm()"
-                class="login-form"
-              >
-                <label for="" id="login-label">Open New Bank Account</label>
-                <select id="login-field" class="dropdown">
-                  <option value="">Employment Status</option>
-                  <option value="option1" class="dropval">employed</option>
-                  <option value="option2" class="dropval">self-employed</option>
-                  <option value="option3" class="dropval">unemployed</option>
-                  <option value="option3" class="dropval">student</option>
-                </select>
-                <input
-                  type="text"
-                  id="login-field"
-                  name="subject"
-                  placeholder="Employer Name (If applicable)"
-                />
-                <select id="login-field" class="dropdown">
-                  <option value="">Source of Funds</option>
-                  <option value="option1" class="dropval">salary</option>
-                  <option value="option2" class="dropval">savings</option>
-                  <option value="option3" class="dropval">investments</option>
-                </select>
-                <input
-                  type="text"
-                  id="login-field"
-                  name="subject"
-                  placeholder="Occupation"
-                />
-                <input
-                  type="number"
-                  id="login-field"
-                  name="start"
-                  placeholder="Annual Income"
-                />
-                <select id="login-field" class="dropdown">
-                  <option value="">Select Account Type</option>
-                  <option value="option1" class="dropval">
-                    Checkings Account
-                  </option>
-                  <option value="option1" class="dropval">
-                    Savings Account
-                  </option>
-                </select>
-                <input type="submit" id="submit-btn" value="SUBMIT" />
-              </form>
-            </div>
-          </div>
-          <div class="cardApp" id="cardApp">
-            <div class="login-form-wrapper" id="loanForm">
-              <form
-                action=""
-                name="myForm"
-                onsubmit="return validateForm()"
-                class="login-form"
-              >
-                <label for="" id="login-label">Apply for Credit Card</label>
-                <select id="login-field" class="dropdown">
-                  <option value="">Employment Status</option>
-                  <option value="option1" class="dropval">employed</option>
-                  <option value="option2" class="dropval">self-employed</option>
-                  <option value="option3" class="dropval">unemployed</option>
-                  <option value="option3" class="dropval">student</option>
-                </select>
-                <input
-                  type="text"
-                  id="login-field"
-                  name="subject"
-                  placeholder="Occupation"
-                />
-                <input
-                  type="text"
-                  id="login-field"
-                  name="subject"
-                  placeholder="Employer Name (If applicable)"
-                />
-                <input
-                  type="number"
-                  id="login-field"
-                  name="start"
-                  placeholder="Annual Income"
-                />
-                <input
-                  type="number"
-                  id="login-field"
-                  name="start"
-                  placeholder="Number of owned credit cards"
-                />
-                <input type="submit" id="submit-btn" value="SUBMIT" />
-              </form>
-            </div>
-          </div>
+          </div> -->
           <div class="notifications" id="notf">
             <div class="transactions-wrapper" id="specificnotf">
               <h3 id="login-field" class="pnd notfheader">Notifications</h3>
@@ -649,10 +522,7 @@
                     <h3 id="notfcontent">
                       your payment to blablabla was successfully made.
                     </h3>
-
                   </div>
-                  
-                  
                 </div>
                 <div class="notifications-info">
                   <div class="notifications-info-header">
