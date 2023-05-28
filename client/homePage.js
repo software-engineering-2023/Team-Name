@@ -22,6 +22,8 @@ function apply(event) {
   const redeempoints = document.getElementById("redeempoints");
   const cardtran = document.getElementById("cardtran");
   const donations = document.getElementById("donations");
+  const specificnotf = document.getElementById("specificnotf");
+  const announcments = document.getElementById("announcments");
   const cardrprt = document.getElementById("cardForm");
   const techrprt = document.getElementById("technicalForm");
   const title = document.getElementById("pageTitle");
@@ -51,6 +53,8 @@ function apply(event) {
     bankaccinfo,
     cardsinfo,
     redeempoints,
+    specificnotf,
+    announcments,
   ];
   const arr2 = [
     "-notf",
@@ -83,7 +87,9 @@ function apply(event) {
       event.target.id != "-bankacctran" &&
       event.target.id != "-cardtran" &&
       event.target.id != "-cardsinfo" &&
-      event.target.id != "-redeempoints"
+      event.target.id != "-redeempoints" &&
+      event.target.id != "-specificnotf" &&
+      event.target.id != "-announcments"
     )
       document.getElementById(
         (event.target.id + "").substring(1)
@@ -118,10 +124,16 @@ function apply(event) {
         event.target.id == "-redeempoints"
       )
         c1.style.display = "block";
+      if (
+        event.target.id == "-specificnotf" ||
+        event.target.id == "-announcments"
+      )
+        notf.style.display = "block";
     });
     if (!arr2.includes(event.target.id))
       title.textContent = document.getElementById(event.target.id).textContent;
-    else if (event.target.id == "-notf") title.textContent = "Notifications";
+    else if (event.target.id == "-notf")
+      title.textContent = "Notifications and Announcements";
   }
 }
 

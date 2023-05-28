@@ -298,7 +298,8 @@ li:not(:last-child) {
 #-cardForm,
 #-bills,
 #-bankacctran,
-#-bankaccinfo {
+#-bankaccinfo,
+#-specificnotf {
   border-radius: 10px 0px 0px 0px;
   border-right: 1px solid rgb(140, 140, 140);
 }
@@ -306,8 +307,13 @@ li:not(:last-child) {
 #-technicalForm,
 #-donations,
 #-cardtran,
-#-cardsinfo {
+#-cardsinfo,
+#-announcments {
   border-radius: 0px 10px 0px 0px;
+}
+
+#cardsinfo {
+  display: none;
 }
 
 .report-options a:hover {
@@ -351,7 +357,6 @@ li:not(:last-child) {
 
 .notifications {
   position: absolute;
-  background-color: olive;
   width: 100%;
   height: 100%;
   display: none;
@@ -536,7 +541,8 @@ li:not(:last-child) {
   flex: 7;
   border-right: 1px solid rgb(140, 140, 140);
 }
-#tranFrom {
+#tranFrom,
+#cardtranFrom {
   flex: 2;
   border-right: 1px solid rgb(140, 140, 140);
 }
@@ -576,6 +582,7 @@ li:not(:last-child) {
 #trandate,
 #tranTo,
 #tranFrom,
+#cardtranFrom,
 #offername,
 #offerpoints,
 #offerselect {
@@ -655,6 +662,14 @@ li:not(:last-child) {
   color: black;
   /* Additional styling as needed */
 }
+#cardtranFrom::before {
+  padding-top: 5px;
+  content: "From Card Number";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
 #tranTo::before {
   padding-top: 5px;
   content: "To Account/Company";
@@ -695,6 +710,102 @@ li:not(:last-child) {
   color: black;
   /* Additional styling as needed */
 }
+#cardnum::before {
+  padding-top: 5px;
+  content: "Card Number";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#expdt::before {
+  padding-top: 5px;
+  content: "Expiry Date";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#cvv::before {
+  padding-top: 5px;
+  content: "CVV";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#points::before {
+  padding-top: 5px;
+  content: "Card Points";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#crdtlim::before {
+  padding-top: 5px;
+  content: "Credit Limit";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#accnumb::before {
+  padding-top: 5px;
+  content: "Account Number";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#acctype::before {
+  padding-top: 5px;
+  content: "Account Type";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#accbalance::before {
+  padding-top: 5px;
+  content: "Current Balance";
+  font-size: 18px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#acciban::before {
+  padding-top: 5px;
+  content: "IBAN";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notftitle::before {
+  padding-top: 5px;
+  content: "Title";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notftime::before {
+  padding-top: 5px;
+  content: "Received at";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfcontent::before {
+  padding-top: 5px;
+  content: "Message";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
 
 .cardsinfo-wrapper {
   display: flex;
@@ -710,12 +821,21 @@ li:not(:last-child) {
   background-color: #0be49c;
   margin: 0;
   border-radius: 0px 10px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+}
+
+#offerselect:hover {
+  color: #0be49c;
+  background-color: white;
 }
 
 .creditcard {
   border-radius: 10px;
-  background-color: #0be49c;
-  width: 200px;
+  background-color: #b5dcf2;
+  width: 230px;
   height: 330px;
   display: flex;
   flex-direction: column;
@@ -726,14 +846,103 @@ li:not(:last-child) {
 }
 
 .creditcard h3 {
-  margin: 10px;
+  margin: 5px;
+  text-align: center;
 }
 
 #-redeempoints {
   text-decoration: none;
   color: white;
-  background-color: rgb(28, 28, 28);
+  background-color: #81abfe;
   border-radius: 999px;
   padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin: 10px;
+  transition: 0.6s;
+}
+
+#-redeempoints:hover {
+  color: #81abfe;
+  background-color: white;
+}
+
+.accountdata {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+.accountdata-header,
+.notifications-info-header {
+  /* position: absolute; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.accountdata-header h3 {
+  flex: 2;
+}
+.notifications-info-header h3 {
+  flex: 2;
+  text-align: center;
+}
+/* #iban {
+  position: absolute;
+} */
+.notifications-info h3 {
+  font-weight: 400;
+}
+
+.accountdata-header,
+.accountdata-rest,
+.notifications-info-rest,
+.notifications-info-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.notifications-info {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: fit-content;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.notifications-info-rest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#notfcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifications-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 100%;
+  position: absolute;
+  top: 31.6px;
+}
+
+.notfheader {
+  position: absolute;
+  top: 0;
 }
