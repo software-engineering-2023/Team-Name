@@ -758,6 +758,14 @@ li:not(:last-child) {
   color: black;
   /* Additional styling as needed */
 }
+#accholder::before {
+  padding-top: 5px;
+  content: "Account Holder";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
 #acctype::before {
   padding-top: 5px;
   content: "Account Type";
