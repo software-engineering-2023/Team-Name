@@ -72,3 +72,63 @@ function apply(event) {
     else if (event.target.id == "-notf") title.textContent = "Notifications";
   }
 }
+
+const showAlert = (message) => {
+  const alert = document.getElementById("a1");
+  alert.style.visibility = "visible";
+  alert.style.backgroundColor = "red";
+  alert.textContent = message;
+  setTimeout(() => {
+    alert.style.visibility = "hidden";
+    alert.style.backgroundColor = "#0be49c";
+    alert.textContent = "logged in successfully";
+  }, 3000);
+};
+
+const showalertgreen = (message, event) => {
+  event.preventDefault();
+  const alert = document.getElementById("a1");
+  alert.style.visibility = "visible";
+  alert.textContent = message;
+  setTimeout(() => {
+    alert.style.visibility = "hidden";
+    alert.style.backgroundColor = "#0be49c";
+    // alert.textContent = "logged in successfully";
+  }, 3000);
+};
+
+function validateAll(formname, event) {
+  const form = document.forms[formname];
+  const inputs = form.elements;
+  // event.preventDefault();
+  // console.log(1);
+  for (let i = 0; i < inputs.length; i++) {
+    let input = inputs[i];
+    // console.log(2);
+    if (input.value === "") {
+      // console.log("&");
+      showAlert("missing " + input.name);
+      return false;
+    }
+    // console.log(3);
+  }
+  // console.log(4);
+  if (formname == "addbankerform") {
+    showalertgreen("added", event);
+    return false;
+  }
+  if (formname == "removebankerform") {
+    showalertgreen("removed", event);
+    return false;
+  }
+  if (formname == "passandsecurityform") {
+    showalertgreen("updates saved", event);
+    return false;
+  }
+  showalertgreen("posted", event);
+  // if (formname == "passandsecurity") {
+  //   showalertgreen("updates saved", event);
+  // } else if (formname == "announceform") {
+  //   showalertgreen("posted", event);
+  // }
+}

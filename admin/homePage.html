@@ -20,6 +20,9 @@
     <title>SEB | home</title>
   </head>
   <body>
+    <div class="alert" id="a1">
+      <p>logged in successfully</p>
+    </div>
     <div class="home">
       <div class="home-menu">
         <div class="home-menu-logo">
@@ -27,7 +30,7 @@
         </div>
         <div class="home-menu-options">
           <ul>
-            <li>
+            <li id="lin">
               <span class="material-symbols-outlined"> manage_accounts </span
               ><a id="-c1" onclick="apply(event)" href="">Manage Clients</a>
             </li>
@@ -66,7 +69,7 @@
       </div>
       <div class="home-dashboard">
         <div class="home-dashboard-header">
-          <h2 id="pageTitle">Accounts and Cards</h2>
+          <h2 id="pageTitle">Admin Dashboard</h2>
           <h3 id="headerName">Admin</h3>
           <a href="" class="icon">
             <span
@@ -169,20 +172,21 @@
                 <div class="login-form-wrapper" id="issueresolution">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="sendreplyform"
+                    onsubmit="return validateAll('sendreplyform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Send a reply </label>
                     <input
                       type="text"
                       id="login-field"
-                      name="cardNum"
+                      name="client's username"
                       placeholder="Client's username"
                     />
                     <textarea
                       rows="5"
                       cols="30"
+                      name="reply body"
                       placeholder="Enter the reply"
                       id="login-field"
                     ></textarea>
@@ -206,8 +210,8 @@
                 <div class="login-form-wrapper" id="personalInfo">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="personalsettform"
+                    onsubmit="showalertgreen('updates saved', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Personal Info</label>
@@ -251,27 +255,27 @@
                 <div class="login-form-wrapper" id="passSettings">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="passandsecurityform"
+                    onsubmit="return validateAll('passandsecurityform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Password and Security</label>
                     <input
                       type="password"
                       id="login-field"
-                      name="oldpass"
+                      name="old password"
                       placeholder="enter your current password"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="newpass"
+                      name="new password"
                       placeholder="enter your new password"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="confpass"
+                      name="password confirm"
                       placeholder="confirm your new password"
                     />
                     <input
@@ -288,21 +292,22 @@
             <div class="login-form-wrapper">
               <form
                 action=""
-                name="myForm"
-                onsubmit="return validateForm()"
+                name="announceform"
+                onsubmit="return validateAll('announceform', event)"
                 class="login-form"
               >
                 <label for="" id="login-label">Create an Announcement</label>
                 <input
                   type="text"
                   id="login-field"
-                  name="cardNum"
+                  name="title"
                   placeholder="Announcement Title"
                 />
                 <textarea
                   rows="5"
                   cols="30"
                   placeholder="Enter The Announcement Text"
+                  name="announcement body"
                   id="login-field"
                 ></textarea>
                 <input type="submit" id="submit-btn" value="POST" />
@@ -321,8 +326,8 @@
                 <div class="login-form-wrapper" id="addbanker">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="addbankerform"
+                    onsubmit="return validateAll('addbankerform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label"
@@ -331,7 +336,7 @@
                     <input
                       type="text"
                       id="login-field"
-                      name="fname"
+                      name="employee id"
                       placeholder="Banker's Employee Id"
                     />
                     <select id="login-field" class="roleSelect">
@@ -358,8 +363,8 @@
                 <div class="login-form-wrapper" id="removebanker">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="removebankerform"
+                    onsubmit="return validateAll('removebankerform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label"
@@ -368,13 +373,13 @@
                     <input
                       type="text"
                       id="login-field"
-                      name="oldpass"
+                      name="employee id"
                       placeholder="Banker's Employee ID"
                     />
                     <input
-                      type="password"
+                      type="text"
                       id="login-field"
-                      name="newpass"
+                      name="removal reason"
                       placeholder="Reason for removal"
                     />
                     <input
@@ -387,95 +392,6 @@
               </div>
             </div>
           </div>
-          <!-- <div class="reporting" id="reporting">
-            <div class="reporting-cntnt">
-              <div class="report-options">
-                <a href="" id="-cardForm" onclick="apply(event)">Card Issue</a>
-                <a href="" id="-technicalForm" onclick="apply(event)"
-                  >Technical Issue</a
-                >
-              </div>
-              <div class="report-form">
-                <div class="card-report">
-                  <div class="login-form-wrapper" id="cardForm">
-                    <form
-                      action=""
-                      name="myForm"
-                      onsubmit="return validateForm()"
-                      class="login-form"
-                    >
-                      <label for="" id="login-label">Card Issue Report</label>
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="cardNum"
-                        placeholder="Please enter the card number"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="issue"
-                        placeholder="Specify the card issue (stolen/lost/damaged)"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="start"
-                        placeholder="If the card was lost/stolen, when did this happen?"
-                      />
-                      <div class="chk-wrapper">
-                        <label for="chk">replace card?</label>
-                        <input
-                          type="checkbox"
-                          id="login-field chk"
-                          placeholder="replace card?"
-                        />
-                      </div>
-                      <input type="submit" id="submit-btn" value="SUBMIT" />
-                    </form>
-                  </div>
-                  <div class="login-form-wrapper" id="technicalForm">
-                    <form
-                      action=""
-                      name="myForm"
-                      onsubmit="return validateForm()"
-                      class="login-form"
-                    >
-                      <label for="" id="login-label"
-                        >Technical Issue Report</label
-                      >
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="subject"
-                        placeholder="Subject"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="start"
-                        placeholder="When did you start to notice this issue?"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="frequency"
-                        placeholder="How frequent (per day) do you face this problem?"
-                      />
-                      <input
-                        type="text"
-                        id="login-field"
-                        name="comments"
-                        placeholder="Please feel free to add any notes or comments"
-                      />
-                      <input type="submit" id="submit-btn" value="SUBMIT" />
-                    </form>
-                  </div>
-                </div>
-                <div class="technical-report"></div>
-              </div>
-            </div>
-          </div> -->
           <div class="notifications" id="notf">
             <div class="transactions-wrapper" id="specificnotf">
               <h3 id="login-field" class="pnd notfheader">Notifications</h3>
@@ -485,62 +401,8 @@
                     <h3 id="notftitle">Payment Confirmation</h3>
                     <h3 id="notftime">29-05-2023 19:00 pm</h3>
                   </div>
-                  <div class="notifications-info-rest">
-                    <h3 id="notfcontent">
-                      your payment to blablabla was successfully made.
-                    </h3>
-                  </div>
-                </div>
-                <div class="notifications-info">
                   <div class="notifications-info-header">
-                    <h3 id="notftitle">Payment Confirmation</h3>
-                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
-                  </div>
-                  <div class="notifications-info-rest">
-                    <h3 id="notfcontent">
-                      your payment to blablabla was successfully made.
-                    </h3>
-                  </div>
-                </div>
-                <div class="notifications-info">
-                  <div class="notifications-info-header">
-                    <h3 id="notftitle">Payment 2 Confirmation</h3>
-                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
-                  </div>
-                  <div class="notifications-info-rest">
-                    <h3 id="notfcontent">
-                      your payment to blablabla was successfully made.
-                    </h3>
-                  </div>
-                </div>
-                <div class="notifications-info">
-                  <div class="notifications-info-header">
-                    <h3 id="notftitle">Payment Confirmation</h3>
-                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
-                  </div>
-                  <div class="notifications-info-rest">
-                    <h3 id="notfcontent">
-                      your payment to blablabla was successfully made.
-                    </h3>
-                  </div>
-                </div>
-                <div class="notifications-info">
-                  <div class="notifications-info-header">
-                    <h3 id="notftitle">Payment Confirmation</h3>
-                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
-                  </div>
-                  <div class="notifications-info-rest">
-                    <h3 id="notfcontent">
-                      your payment to blablabla was successfully made.
-                    </h3>
-                  </div>
-                </div>
-                <div class="notifications-info">
-                  <div class="notifications-info-header">
-                    <h3 id="notftitle">Payment Confirmation</h3>
-                    <h3 id="notftime">29-05-2023 19:00 pm</h3>
-                  </div>
-                  <div class="notifications-info-rest">
+                    <h3 id="notfsender">Banker</h3>
                     <h3 id="notfcontent">
                       your payment to blablabla was successfully made.
                     </h3>

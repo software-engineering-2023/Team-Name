@@ -20,6 +20,9 @@
     <title>SEB | home</title>
   </head>
   <body>
+    <div class="alert" id="a1">
+      <p>logged in successfully</p>
+    </div>
     <div class="home">
       <div class="home-menu">
         <div class="home-menu-logo">
@@ -164,7 +167,12 @@
                         <h3 id="notfsender">hazemmohamed210</h3>
                         <h3 id="notfreplace">yes</h3>
                         <div class="btn-wrapper">
-                          <a id="deletereport" href="">Delete Report</a>
+                          <a
+                            id="deletereport"
+                            onclick="showalertgreen('report deleted', event)"
+                            href=""
+                            >Delete Report</a
+                          >
                         </div>
                       </div>
                       <div class="notifications-info-rest">
@@ -181,7 +189,12 @@
                         <h3 id="notfsender">hazemmohamed210</h3>
                         <h3 id="notfreplace">yes</h3>
                         <div class="btn-wrapper">
-                          <a id="deletereport" href="">Delete Report</a>
+                          <a
+                            id="deletereport"
+                            onclick="showalertgreen('report deleted', event)"
+                            href=""
+                            >Delete Report</a
+                          >
                         </div>
                       </div>
                       <div class="notifications-info-rest">
@@ -198,7 +211,12 @@
                         <h3 id="notfsender">hazemmohamed210</h3>
                         <h3 id="notfreplace">yes</h3>
                         <div class="btn-wrapper">
-                          <a id="deletereport" href="">Delete Report</a>
+                          <a
+                            id="deletereport"
+                            onclick="showalertgreen('report deleted', event)"
+                            href=""
+                            >Delete Report</a
+                          >
                         </div>
                       </div>
                       <div class="notifications-info-rest">
@@ -215,7 +233,12 @@
                         <h3 id="notfsender">hazemmohamed210</h3>
                         <h3 id="notfreplace">yes</h3>
                         <div class="btn-wrapper">
-                          <a id="deletereport" href="">Delete Report</a>
+                          <a
+                            id="deletereport"
+                            onclick="showalertgreen('report deleted', event)"
+                            href=""
+                            >Delete Report</a
+                          >
                         </div>
                       </div>
                       <div class="notifications-info-rest">
@@ -227,21 +250,22 @@
                 <div class="login-form-wrapper" id="issueresolution">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="sendreply"
+                    onsubmit="return validateAll('sendreply', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Send a reply </label>
                     <input
                       type="text"
                       id="login-field"
-                      name="cardNum"
+                      name="client's username"
                       placeholder="Client's username"
                     />
                     <textarea
                       rows="5"
                       cols="30"
                       placeholder="Enter the reply"
+                      name="reply body"
                       id="login-field"
                     ></textarea>
                     <input type="submit" id="submit-btn" value="POST" />
@@ -265,7 +289,7 @@
                   <form
                     action=""
                     name="myForm"
-                    onsubmit="return validateForm()"
+                    onsubmit="showalertgreen('updates saved', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Personal Info</label>
@@ -309,27 +333,27 @@
                 <div class="login-form-wrapper" id="passSettings">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="passandsecurityform"
+                    onsubmit="return validateAll('passandsecurityform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Password and Security</label>
                     <input
                       type="password"
                       id="login-field"
-                      name="oldpass"
+                      name="old password"
                       placeholder="enter your current password"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="newpass"
+                      name="new password"
                       placeholder="enter your new password"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="confpass"
+                      name="password confirm"
                       placeholder="confirm your new password"
                     />
                     <input

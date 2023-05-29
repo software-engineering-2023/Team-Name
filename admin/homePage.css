@@ -1021,3 +1021,24 @@ li:not(:last-child) {
 #addbanker {
   display: none;
 }
+
+.alert {
+  width: 20vw;
+  height: 50px;
+  background-color: #0be49c;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40vw;
+  border-radius: 0 0 10px 10px;
+  z-index: 2;
+  font-family: Verdana;
+  color: white;
+  visibility: hidden;
+  text-transform: capitalize;
+}
+
+#lin {
+  display: none;
+}

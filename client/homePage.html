@@ -20,6 +20,9 @@
     <title>SEB | home</title>
   </head>
   <body>
+    <div class="alert" id="a1">
+      <p>logged in successfully</p>
+    </div>
     <div class="home">
       <div class="home-menu">
         <div class="home-menu-logo">
@@ -117,17 +120,32 @@
                   <div class="offer-info" id="gas">
                     <h4 id="offername">1 month anghami subscription</h4>
                     <h4 id="offerpoints">200</h4>
-                    <a href="" id="offerselect">REDEEM</a>
+                    <a
+                      href=""
+                      id="offerselect"
+                      onclick="showalertgreen('points redeemed', event)"
+                      >REDEEM</a
+                    >
                   </div>
                   <div class="offer-info" id="water">
                     <h4 id="offername">Free happy meal toy from Macdonalds</h4>
                     <h4 id="offerpoints">100</h4>
-                    <a href="" id="offerselect">REDEEM</a>
+                    <a
+                      href=""
+                      id="offerselect"
+                      onclick="showalertgreen('points redeemed', event)"
+                      >REDEEM</a
+                    >
                   </div>
                   <div class="offer-info" id="electricity">
                     <h4 id="offername">Bonus marks in Milestone 3</h4>
                     <h4 id="offerpoints">500</h4>
-                    <a href="" id="offerselect">REDEEM</a>
+                    <a
+                      href=""
+                      id="offerselect"
+                      onclick="showalertgreen('points redeemed', event)"
+                      >REDEEM</a
+                    >
                   </div>
                 </div>
                 <div class="bankaccinfo-wrapper" id="bankaccinfo">
@@ -210,39 +228,39 @@
                 <div class="login-form-wrapper" id="internal">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="internalform"
+                    onsubmit="return validateTransfer('internalform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Internal Transfer</label>
                     <input
                       type="text"
                       id="login-field"
-                      name="fname"
+                      name="from account"
                       placeholder="From Account Number"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="username"
+                      name="to account"
                       placeholder="To Account Number"
                     />
                     <input
                       type="number"
                       id="login-field"
-                      name="addr"
+                      name="amount"
                       placeholder="Amount"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="phoneNum"
-                      placeholder="Description (optional)"
+                      name="description"
+                      placeholder="Description"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="email"
+                      name="transfer PIN"
                       placeholder="enter your transfer PIN"
                     />
                     <input
@@ -255,45 +273,45 @@
                 <div class="login-form-wrapper domst" id="domestic">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="domesticform"
+                    onsubmit="return validateTransfer('domesticform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Domestic Transfer</label>
                     <input
                       type="text"
                       id="login-field"
-                      name="fname"
+                      name="from account"
                       placeholder="From Account Number"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="username"
+                      name="to account"
                       placeholder="To Account Number"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="username"
+                      name="Beneficiary bank"
                       placeholder="Beneficiary Bank"
                     />
                     <input
                       type="number"
                       id="login-field"
-                      name="addr"
+                      name="amount"
                       placeholder="Amount"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="phoneNum"
-                      placeholder="Description (optional)"
+                      name="description"
+                      placeholder="Description"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="email"
+                      name="transfer PIN"
                       placeholder="enter your transfer PIN"
                     />
                     <input
@@ -306,8 +324,8 @@
                 <div class="login-form-wrapper intrn" id="international">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="interform"
+                    onsubmit="return validateTransfer('interform', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label"
@@ -316,43 +334,43 @@
                     <input
                       type="text"
                       id="login-field"
-                      name="fname"
+                      name="from account"
                       placeholder="From Account Number"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="username"
+                      name="to account"
                       placeholder="To Account Number"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="username"
+                      name="IBAN"
                       placeholder="enter your IBAN (International Bank Account Number)"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="username"
+                      name="Beneficiary bank"
                       placeholder="Beneficiary Bank"
                     />
                     <input
                       type="number"
                       id="login-field"
-                      name="addr"
+                      name="amount"
                       placeholder="Amount"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="phoneNum"
-                      placeholder="Description (optional)"
+                      name="description"
+                      placeholder="Description"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="email"
+                      name="transfer PIN"
                       placeholder="enter your transfer PIN"
                     />
                     <input
@@ -383,7 +401,7 @@
                   <form
                     action=""
                     name="myForm"
-                    onsubmit="return validateForm()"
+                    onsubmit="showalertgreen('updates saved', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Personal Info</label>
@@ -427,27 +445,27 @@
                 <div class="login-form-wrapper" id="passSettings">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="passandsecurity"
+                    onsubmit="return validateTransfer('passandsecurity', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label">Password and Security</label>
                     <input
                       type="password"
                       id="login-field"
-                      name="oldpass"
+                      name="current password"
                       placeholder="enter your current password"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="newpass"
+                      name="new password"
                       placeholder="enter your new password"
                     />
                     <input
                       type="password"
                       id="login-field"
-                      name="confpass"
+                      name="password confirm"
                       placeholder="confirm your new password"
                     />
                     <input
@@ -460,15 +478,19 @@
                 <div class="login-form-wrapper" id="notfSettings">
                   <form
                     action=""
-                    name="myForm"
-                    onsubmit="return validateForm()"
+                    name="reminderset"
+                    onsubmit="return validateTransfer('reminderset', event)"
                     class="login-form"
                   >
                     <label for="" id="login-label"
                       >Set Reminder for Bills/Payments</label
                     >
-                    <select id="login-field" class="dropdown">
-                      <option value="">Select a Bill</option>
+                    <select
+                      id="login-field"
+                      class="dropdown billselectclass"
+                      name="bill select"
+                    >
+                      <option value="option0">Select a Bill</option>
                       <option value="option1" class="dropval">Gas Bill</option>
                       <option value="option2" class="dropval">
                         Water Bill
@@ -486,20 +508,20 @@
                     <input
                       type="text"
                       id="login-field"
-                      name="custom"
+                      name="custom bill id"
                       placeholder="for custom bills, please enter the bill id"
                     />
                     <input
                       type="datetime-local"
                       id="login-field"
-                      name="when"
+                      name="reminder date"
                       placeholder="choose the date and time for the reminder"
                     />
                     <input
                       type="text"
                       id="login-field"
-                      name="msg"
-                      placeholder="add a custom message for the reminder (optional)"
+                      name="custom message"
+                      placeholder="add a custom message for the reminder"
                     />
                     <input
                       type="submit"
@@ -550,7 +572,7 @@
                     <form action="" name="billForm" class="login-form">
                       <label for="" id="login-label">Pay Bill</label>
                       <select id="login-field" class="billSelect">
-                        <option value="">Select a Bill</option>
+                        <option value="option0">Select a Bill</option>
                         <option value="option1" id="gasbll" class="dropval">
                           Gas Bill
                         </option>
@@ -583,19 +605,24 @@
               <div class="login-form-wrapper" id="donations">
                 <form
                   action=""
-                  name="myForm"
-                  onsubmit="return validateForm()"
+                  name="donateform"
+                  onsubmit="return validateDonation(event)"
                   class="login-form"
                 >
                   <label for="" id="login-label">Donate</label>
-                  <select id="login-field" class="dropdown">
-                    <option value="">Select a charity</option>
+                  <select
+                    id="login-field"
+                    class="dropdown donateformclass"
+                    name="donatedropdown"
+                  >
+                    <option value="option0">Select a charity</option>
                     <option value="option1" class="dropval">57357</option>
                     <option value="option2" class="dropval">El orman</option>
                   </select>
                   <input
                     type="number"
                     id="login-field"
+                    name="donateamount"
                     placeholder="enter the amount to be donated"
                   />
                   <input type="submit" id="submit-btn" value="SUBMIT" />
@@ -646,22 +673,6 @@
                 <h3 id="login-field" class="pnd">
                   Credit cards Transactions History
                 </h3>
-                <div class="tran-info" id="gas">
-                  <h4 id="tranname">Gas Bill</h4>
-                  <h4 id="cardtranFrom">76252525244</h4>
-                  <h4 id="tranTo">Gas Company</h4>
-                  <!-- <h4 id="billamount">800 EGP</h4> -->
-                  <h4 id="trandate">26-05-2023</h4>
-                  <h4 id="amountout">-800 EGP</h4>
-                </div>
-                <div class="tran-info" id="water">
-                  <h4 id="tranname">Internal Bank Transfer</h4>
-                  <h4 id="cardtranFrom">76252525244</h4>
-                  <h4 id="tranTo">971888271928</h4>
-                  <!-- <h4 id="billamount">1950 EGP</h4> -->
-                  <h4 id="trandate">02-05-2023</h4>
-                  <h4 id="amountout">-1950 EGP</h4>
-                </div>
                 <div class="tran-info" id="electricity">
                   <h4 id="tranname">Macdonalds</h4>
                   <h4 id="cardtranFrom">971888271928</h4>
@@ -672,14 +683,6 @@
                 </div>
                 <div class="tran-info" id="electricity">
                   <h4 id="tranname">Anghami Plus</h4>
-                  <h4 id="cardtranFrom">971888271928</h4>
-                  <h4 id="tranTo">76252525244</h4>
-                  <!-- <h4 id="billamount">9000 EGP</h4> -->
-                  <h4 id="trandate">28-04-2023</h4>
-                  <h4 id="amountout">-1000 EGP</h4>
-                </div>
-                <div class="tran-info" id="electricity">
-                  <h4 id="tranname">Domestic Bank Transfer</h4>
                   <h4 id="cardtranFrom">971888271928</h4>
                   <h4 id="tranTo">76252525244</h4>
                   <!-- <h4 id="billamount">9000 EGP</h4> -->
@@ -702,8 +705,8 @@
                   <div class="login-form-wrapper" id="cardForm">
                     <form
                       action=""
-                      name="myForm"
-                      onsubmit="return validateForm()"
+                      name="cardissueform"
+                      onsubmit="return validateCardReport(event)"
                       class="login-form"
                     >
                       <label for="" id="login-label">Card Issue Report</label>
@@ -730,6 +733,7 @@
                         <input
                           type="checkbox"
                           id="login-field chk"
+                          name="replace"
                           placeholder="replace card?"
                         />
                       </div>
@@ -739,8 +743,8 @@
                   <div class="login-form-wrapper" id="technicalForm">
                     <form
                       action=""
-                      name="myForm"
-                      onsubmit="return validateForm()"
+                      name="techissueform"
+                      onsubmit="return validateTechReport(event)"
                       class="login-form"
                     >
                       <label for="" id="login-label"
@@ -782,31 +786,38 @@
             <div class="login-form-wrapper" id="loanForm">
               <form
                 action=""
-                name="myForm"
-                onsubmit="return validateForm()"
+                name="loanform"
+                onsubmit="return validateLoanApp(event)"
                 class="login-form"
               >
                 <label for="" id="login-label">Loan Application</label>
+                <select id="login-field" class="dropdown loanaccnumclass">
+                  <option value="option0">Select your account number</option>
+                  <option value="option1" class="dropval">
+                    1111 0000 1111 0000
+                  </option>
+                  <!-- <option value="option1" class="dropval">Car Loan</option> -->
+                </select>
                 <input
                   type="text"
                   id="login-field"
-                  name="subject"
+                  name="occupation"
                   placeholder="Occupation"
                 />
                 <input
                   type="number"
                   id="login-field"
-                  name="start"
+                  name="loanamount"
                   placeholder="Loan Amount"
                 />
                 <input
                   type="number"
                   id="login-field"
-                  name="start"
+                  name="income"
                   placeholder="Annual Income"
                 />
-                <select id="login-field" class="dropdown">
-                  <option value="">Select Loan Type</option>
+                <select id="login-field" class="dropdown loanformclass">
+                  <option value="option0">Select Loan Type</option>
                   <option value="option1" class="dropval">Personal Loan</option>
                   <option value="option1" class="dropval">Car Loan</option>
                 </select>
@@ -818,13 +829,13 @@
             <div class="login-form-wrapper" id="loanForm">
               <form
                 action=""
-                name="myForm"
-                onsubmit="return validateForm()"
+                name="bankaccform"
+                onsubmit="return validateBankAccApp(event)"
                 class="login-form"
               >
                 <label for="" id="login-label">Open New Bank Account</label>
-                <select id="login-field" class="dropdown">
-                  <option value="">Employment Status</option>
+                <select id="login-field" class="dropdown bankaccappclass">
+                  <option value="option0">Employment Status</option>
                   <option value="option1" class="dropval">employed</option>
                   <option value="option2" class="dropval">self-employed</option>
                   <option value="option3" class="dropval">unemployed</option>
@@ -836,8 +847,8 @@
                   name="subject"
                   placeholder="Employer Name (If applicable)"
                 />
-                <select id="login-field" class="dropdown">
-                  <option value="">Source of Funds</option>
+                <select id="login-field" class="dropdown sourcefundsclass">
+                  <option value="option0">Source of Funds</option>
                   <option value="option1" class="dropval">salary</option>
                   <option value="option2" class="dropval">savings</option>
                   <option value="option3" class="dropval">investments</option>
@@ -845,21 +856,21 @@
                 <input
                   type="text"
                   id="login-field"
-                  name="subject"
+                  name="occupation"
                   placeholder="Occupation"
                 />
                 <input
                   type="number"
                   id="login-field"
-                  name="start"
+                  name="income"
                   placeholder="Annual Income"
                 />
-                <select id="login-field" class="dropdown">
-                  <option value="">Select Account Type</option>
+                <select id="login-field" class="dropdown acctypeclass">
+                  <option value="option0">Select Account Type</option>
                   <option value="option1" class="dropval">
                     Checkings Account
                   </option>
-                  <option value="option1" class="dropval">
+                  <option value="option2" class="dropval">
                     Savings Account
                   </option>
                 </select>
@@ -871,13 +882,20 @@
             <div class="login-form-wrapper" id="loanForm">
               <form
                 action=""
-                name="myForm"
-                onsubmit="return validateForm()"
+                name="cardappform"
+                onsubmit="return validateCardApp(event)"
                 class="login-form"
               >
                 <label for="" id="login-label">Apply for Credit Card</label>
-                <select id="login-field" class="dropdown">
-                  <option value="">Employment Status</option>
+                <select id="login-field" class="dropdown cardaccnumclass">
+                  <option value="option0">Select your account number</option>
+                  <option value="option1" class="dropval">
+                    1111 0000 1111 0000
+                  </option>
+                  <!-- <option value="option1" class="dropval">Car Loan</option> -->
+                </select>
+                <select id="login-field" class="dropdown cardappclass">
+                  <option value="option0">Employment Status</option>
                   <option value="option1" class="dropval">employed</option>
                   <option value="option2" class="dropval">self-employed</option>
                   <option value="option3" class="dropval">unemployed</option>
@@ -886,25 +904,25 @@
                 <input
                   type="text"
                   id="login-field"
-                  name="subject"
+                  name="occupation"
                   placeholder="Occupation"
                 />
                 <input
                   type="text"
                   id="login-field"
-                  name="subject"
+                  name="empname"
                   placeholder="Employer Name (If applicable)"
                 />
                 <input
                   type="number"
                   id="login-field"
-                  name="start"
+                  name="income"
                   placeholder="Annual Income"
                 />
                 <input
                   type="number"
                   id="login-field"
-                  name="start"
+                  name="cardsowned"
                   placeholder="Number of owned credit cards"
                 />
                 <input type="submit" id="submit-btn" value="SUBMIT" />
@@ -929,44 +947,54 @@
                       <h3 id="notftitle">Payment Confirmation</h3>
                       <h3 id="notftime">29-05-2023 19:00 pm</h3>
                     </div>
-                    <div class="notifications-info-rest">
+                    <div class="notifications-info-header">
+                      <!-- <h3 id="notftitle">Payment Confirmation</h3> -->
+                      <h3 id="notfsender">admin</h3>
                       <h3 id="notfcontent">
                         your payment to blablabla was successfully made.
                       </h3>
                     </div>
+                    <!-- <div class="notifications-info-rest">
+                      <h3 id="notfcontent">
+                        your payment to blablabla was successfully made.
+                      </h3>
+                    </div> -->
                   </div>
                   <div class="notifications-info">
                     <div class="notifications-info-header">
                       <h3 id="notftitle">Payment Confirmation</h3>
                       <h3 id="notftime">29-05-2023 19:00 pm</h3>
                     </div>
-                    <div class="notifications-info-rest">
-                      <h3 id="notfcontent">
-                        your payment to blablabla was successfully made.
-                      </h3>
-                    </div>
-                  </div>
-                  <div class="notifications-info">
                     <div class="notifications-info-header">
-                      <h3 id="notftitle">Payment 2 Confirmation</h3>
-                      <h3 id="notftime">29-05-2023 19:00 pm</h3>
-                    </div>
-                    <div class="notifications-info-rest">
+                      <!-- <h3 id="notftitle">Payment Confirmation</h3> -->
+                      <h3 id="notfsender">admin</h3>
                       <h3 id="notfcontent">
                         your payment to blablabla was successfully made.
                       </h3>
                     </div>
+                    <!-- <div class="notifications-info-rest">
+                      <h3 id="notfcontent">
+                        your payment to blablabla was successfully made.
+                      </h3>
+                    </div> -->
                   </div>
                   <div class="notifications-info">
                     <div class="notifications-info-header">
                       <h3 id="notftitle">Payment Confirmation</h3>
                       <h3 id="notftime">29-05-2023 19:00 pm</h3>
                     </div>
-                    <div class="notifications-info-rest">
+                    <div class="notifications-info-header">
+                      <!-- <h3 id="notftitle">Payment Confirmation</h3> -->
+                      <h3 id="notfsender">admin</h3>
                       <h3 id="notfcontent">
                         your payment to blablabla was successfully made.
                       </h3>
                     </div>
+                    <!-- <div class="notifications-info-rest">
+                      <h3 id="notfcontent">
+                        your payment to blablabla was successfully made.
+                      </h3>
+                    </div> -->
                   </div>
                 </div>
               </div>
