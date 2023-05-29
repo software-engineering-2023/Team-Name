@@ -849,6 +849,14 @@ li:not(:last-child) {
   color: black;
   /* Additional styling as needed */
 }
+#notfaccnumbr2::before {
+  padding-top: 5px;
+  content: "Account Number";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
 #notfuser::before {
   padding-top: 5px;
   content: "Client's Username";
@@ -916,6 +924,46 @@ li:not(:last-child) {
 #notfcardsowned::before {
   padding-top: 5px;
   content: "Credit Cards Owned";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfloantype::before {
+  padding-top: 5px;
+  content: "Loan Type";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfloanamount::before {
+  padding-top: 5px;
+  content: "Loan Amount";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfcardnumb::before {
+  padding-top: 5px;
+  content: "Card Number";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfwhen::before {
+  padding-top: 5px;
+  content: "When did this issue occur?";
+  font-size: 12px;
+  display: block;
+  color: black;
+  /* Additional styling as needed */
+}
+#notfreplace::before {
+  padding-top: 5px;
+  content: "Replace Card?";
   font-size: 12px;
   display: block;
   color: black;
